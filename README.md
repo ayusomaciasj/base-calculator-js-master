@@ -1,47 +1,31 @@
-## Link al curso completo de Javascript en Youtube:
-[VIDEO CURSO GRATIS COMPLETO: JavaScript Desde Cero por Sergie Code](https://youtu.be/N8Xt5rP_DUo)
+# Calculator in JavaScript
 
+## Functions
 
-# Tutorial de Calculadora en JavaScript
+### `addToScreen(value)`
 
-Link para ver resultado: [CALCULADORA TRABAJO TERMINADO](https://calculadora-tutorial-js.netlify.app/)
+This function add the given value to the screen of the calculator. It gets the parameter `value` which represent the value that need to be added to the screen.  `document.getElementById('screen')`.
 
-Este es un tutorial que te guiará a través del proceso de creación de una calculadora utilizando JavaScript. El código HTML y CSS necesario para la interfaz de la calculadora estará disponible en el repositorio, por lo que nos centraremos en explicar el funcionamiento del código JavaScript a continuación.
-
-## Funciones Principales
-
-### `agregarALaPantalla(value)`
-
-Esta función se encarga de agregar el valor proporcionado a la pantalla de la calculadora. Recibe un parámetro `value` que representa el valor que se debe agregar. Utiliza `document.getElementById('pantalla')` para obtener el elemento de la pantalla por su identificador y luego actualiza el valor del campo `value` concatenando el nuevo valor.
-
-    function agregarALaPantalla(value) {
-        document.getElementById('pantalla').value += value;
+    function addtoScreen(v) {
+        document.getElementById('screen').value += v;
     }
 
-### `calcular()`
+### `compute()`
 
-La función `calcular()` se ejecuta cuando se presiona el botón de igual (=) en la calculadora. Primero, obtiene el valor actual de la pantalla utilizando `document.getElementById('pantalla').value`. Luego, utiliza la función `eval()` para evaluar la expresión matemática representada por el valor de la pantalla. El resultado se almacena en la variable `result`. Finalmente, se actualiza el valor de la pantalla con el resultado calculado.
+The function `compute()` starts when the (=) is press in the calculator. First, It get the value from the screen using `document.getElementById('screen').value`. Then, It uses the function `eval()` to evaluate the math expression given by the value on the screen. The result is stored in the variable `result`. Finally, The value is updated to the value result.
 
-    function calcular() {
-        const valorPantalla = document.getElementById('pantalla').value;
-        const result = eval(valorPantalla);
-        document.getElementById('pantalla').value = result;
+    function compute() {
+        const screenValue = document.getElementById('pantalla').value;
+        const result = eval(screenValue);
+        document.getElementById('screen').value = result;
     }
 
-Es importante tener en cuenta que el uso de `eval()` puede presentar riesgos de seguridad si se permite que los usuarios ingresen código arbitrario. En este caso, asumimos que el código solo se ejecutará en un entorno seguro.
 
-### `limpiarPantalla()`
+### `erase()`
 
-La función `limpiarPantalla()` se utiliza para borrar el contenido de la pantalla de la calculadora. Simplemente asigna una cadena vacía al campo `value` del elemento de la pantalla.
+the function `erase()` it is used to delete the content on the screen of the calculator. It assign a an empty field `value`.
 
-    function limpiarPantalla() {
-        document.getElementById('pantalla').value = '';
+    function erase() {
+        document.getElementById('screen').value = '';
     }
 
-## Integración con HTML y CSS
-
-Para utilizar estas funciones, asegúrate de tener un elemento HTML con el id "pantalla" que represente la pantalla de la calculadora. Puedes ver el código HTML y CSS correspondiente en los archivos proporcionados en el repositorio.
-
-Recuerda que puedes personalizar la interfaz y agregar más funcionalidades según tus necesidades.
-
-¡Ahora estás listo para crear tu propia calculadora en JavaScript! Sigue este tutorial y diviértete explorando el mundo de la programación web.
