@@ -29,5 +29,3 @@ the function `erase()` it is used to delete the content on the screen of the cal
         document.getElementById('screen').value = '';
     }
 
-
-¡Ahora estás listo para crear tu propia calculadora en JavaScript! Sigue este tutorial y diviértete explorando el mundo de la programación web.
