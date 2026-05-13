@@ -8,6 +8,6 @@ function erase(){
 
 function compute(){
     const screenValue = document.getElementById('screen').value;
-    const result = eval(ScreenValue);
+    const result = eval(screenValue);
     document.getElementById('screen').value = result;
 }
